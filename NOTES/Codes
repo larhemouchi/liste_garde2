@@ -1,0 +1,6 @@
+composer dumpautoload && php artisan db:wipe && php artisan migrate --seed
+
+
+
+'{{ asset("lte3/
+") }}'

@@ -1,0 +1,13 @@
+Servicyuser dont have an inverse ralationship
+
+
+$table->time('time_start')->nullable();
+$table->time('time_end')->nullable();
+
+time casting
+
+
+
+
+$table->datetime('start')->nullable();
+            $table->datetime('end')->nullable();

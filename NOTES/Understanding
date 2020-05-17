@@ -1,0 +1,33 @@
+USERS
+-----------------
+
+Login by name_lastname
+
+
+
+Fonction [ doctor ,... ] 
+
+Number dect = call device
+
+
+SPECIALITY [ DOCTORS ]
+------------------
+CAN CHANGE
+
+
+SERVICE [ INFORMATIQUES]
+------------
+CAN CHANGE
+
+ROLES
+-------
+SUPA ADMIN -EVERYTHING
+ADMIN -WATCH - CONTROL ROLES
+
+GARDE [ CALENDAR AREA ]
+------
+
+
+VOIRE GUARD 
+PAR PERSONNE 
+PAR TIME 
