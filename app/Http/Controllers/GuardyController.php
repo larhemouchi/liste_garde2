@@ -30,7 +30,7 @@ class GuardyController extends Controller
         $first_date = Carbon::parse($guardy->date_start);
         $last_date = Carbon::parse($guardy->date_end);
 
-        while ($first_date < $last_date ) {
+        while ($first_date <= $last_date ) {
 
 
             $first_date_string = $first_date->format('Y-m-d');
