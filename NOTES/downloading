@@ -1,0 +1,10 @@
+vendor\laravel\ui\auth-backend\RegistersUsers.php 
+
+#should be commented
+
+register(){
+//$this->guard()->login($user);
+
+
+        
+

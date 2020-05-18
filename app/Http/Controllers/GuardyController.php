@@ -9,23 +9,8 @@ use Validator;
 
 class GuardyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $guardies = Guardy::all();
-        return view('guardies.index', compact('guardies'));
-    }
 
-
-
-
-    public function calendar(Guardy $guardy)
-    {
-        $events = [];
+    public function loopCalendar(Array $events, Guardy $guardy){
 
         $first_date = Carbon::parse($guardy->date_start);
         $last_date = Carbon::parse($guardy->date_end);
@@ -66,17 +51,40 @@ class GuardyController extends Controller
             $first_date->addDay();
         }
 
+        return $events;
+    }
 
 
 
-        //return $guardy;
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $guardies = Guardy::all();
+        return view('guardies.index', compact('guardies'));
+    }
+
+
+
+    public function generalCalendar(){
+
+        $guardies = Guardy::all();
+
+        $events = [];
+
+        $newEvents;
+
+        foreach($guardies as $guardy){
+            $newEvents = self::loopCalendar($events, $guardy);
+
+            $events = array_merge($events, $newEvents);
+        }
+
         
-        //$data = Guardy::all();
-        
-        $data = $guardy->where('id',$guardy->id)->get();
-        $xnow = Carbon::now();
-        $now = $xnow;
-        $later = $xnow->addHour();
+
 
         $calendar = \Calendar::addEvents($events)->setOptions([ //set fullcalendar options
             'firstDay' => 1,
@@ -95,7 +103,42 @@ class GuardyController extends Controller
         ]);
 
         //return response()->json($calendar);
-        //return view('guardies.calendar', compact('calendar'));
+
+        return view('guardies.general-calendar', compact('calendar'));
+
+
+    }
+
+
+
+
+    public function calendar(Guardy $guardy)
+    {
+        $events = [];
+
+
+
+        $events = self::loopCalendar($events, $guardy);
+
+
+        $calendar = \Calendar::addEvents($events)->setOptions([ //set fullcalendar options
+            'firstDay' => 1,
+            'plugins'=> [ 'dayGrid', 'interaction'],
+            'defaultView'=> 'dayGridMonth',
+            'header' => [ 'left'=> 'prev,next', 'center'=> 'title', 'right'=> 'dayGridDay,dayGridWeek,dayGridMonth'],
+            'defaultDate' => date("Y-m-d"),
+            'navLinks' => true,
+            'editable' => true,
+            'selectable' => true,
+            'eventLimit' => true,
+            'locale' => 'fr'
+
+        ])->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
+            'viewRender' => 'function() {alert("Callbacks!");}'
+        ]);
+
+        //return response()->json($calendar);
+
         return view('guardies.calendar', compact('calendar'));
 
     }

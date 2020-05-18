@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('login');
+    return view('welcome');
 });
 
 Route::get('/test', function () {
@@ -44,6 +44,8 @@ Route::get('/all-histories', 'HistoryController@index')->name('histories.index')
 Route::get('/plages-h/{plage}', 'PlageController@history')->name('plages.history');
 Route::resource('plages', 'PlageController');
 
+
+Route::get('/calendar', 'GuardyController@generalCalendar')->name('guardies.g-calendar');
 Route::get('/calendar/{guardy}', 'GuardyController@calendar')->name('guardies.calendar');
 
 
