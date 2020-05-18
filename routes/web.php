@@ -29,6 +29,9 @@ Route::get('/home', 'DashController@home')->name('dash.home');
 
 
 Route::resource('roles', 'RolyController');
+
+
+Route::get('/users/{id}', 'UserController@edit')->name('user.edit');
 Route::resource('users', 'UserController');
 Route::resource('spec', 'SpecController');
 Route::resource('servicies', 'ServicyController');

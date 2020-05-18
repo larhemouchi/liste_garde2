@@ -13,6 +13,7 @@
                       <thead>
                         <tr>
                           <th>Email</th>
+                          <th>Modifier</th>
 
                         </tr>
                       </thead>
@@ -20,6 +21,7 @@
                           @foreach($users as $user)
                         <tr>
                         <td>{{ $user->email }}</td>
+                        <td><a class="btn btn-primary" href="{{ route("users.update", $user->id) }}">Modifier</a></td>
                           
                         </tr>
                         @endforeach

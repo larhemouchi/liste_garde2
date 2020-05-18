@@ -78,6 +78,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-header">...</span>
+          <ul>
+            <li>{{ Auth::user()->email }}</li>
+          </ul>
           <div class="dropdown-divider"></div>
         <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">
@@ -146,12 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>ajouter des utilisateurs</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
-                </a>
-              </li>
+
             </ul>
           </li>
           <li class="nav-item has-treeview menu-close">
