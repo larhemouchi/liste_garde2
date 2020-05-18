@@ -13,7 +13,7 @@
                         
 
 
-                        <x-userfields :pass="$pass"></x-userfields>
+                        <x-userfields :pass="$pass" :user="$user"></x-userfields>
 
 
                   {!! Form::close()!!}

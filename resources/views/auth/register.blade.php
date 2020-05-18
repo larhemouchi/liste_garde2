@@ -12,7 +12,7 @@
                         
 
 
-                        <x-userfields></x-userfields>
+                        <x-userfields :pass="true"></x-userfields>
 
 
                     </form>

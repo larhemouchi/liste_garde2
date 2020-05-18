@@ -65,6 +65,7 @@
                     <div class="form-group row">
                       <label for="time_end" class="col-sm-2 col-form-label">Date fin</label>
                       <div class="col-sm-10">
+                        
                         {!! Form::text('date_end', '' , ['class' => 'form-control invisible', 'id' => 'date_end']) !!}
 
                       </div>

@@ -12,14 +12,16 @@ class Userfields extends Component
      * @var boolean
      */
     public $pass = false;
+    public $user = null;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct( $pass)
+    public function __construct($pass = false, $user =null )
     {
         $this->pass = $pass;
+        $this->user = $user;
     }
 
 
@@ -31,6 +33,7 @@ class Userfields extends Component
      */
     public function render()
     {
+        //dd($this->user);
         return view('components.userfields');
     }
 }
