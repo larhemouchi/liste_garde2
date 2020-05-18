@@ -2,22 +2,24 @@
 
 @section('content')
 
-
-    <div class="row">
-        <div class="col-md-12">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Users</div>
+                <div class="card-header">{{ __('Register') }}</div>
 
-                  <div class="card-body table-responsive p-0">
+                <div class="card-body">
+                  {!! Form::model($user, ['route' => ['users.update', $user->id]]) !!}
+                    <form method="POST" action="{{ route('register') }}">
+                        
 
-                    
+
+                        <x-userfields :pass="$pass"></x-userfields>
 
 
-
-                  </div>    
+                  {!! Form::close()!!}
+                </div>
             </div>
         </div>
     </div>
-
 
 @endsection
