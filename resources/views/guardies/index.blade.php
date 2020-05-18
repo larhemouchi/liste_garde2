@@ -13,6 +13,7 @@
                       <thead>
                         <tr>
                           <th>Names</th>
+                          <th>Calendrier</th>
 
                         </tr>
                       </thead>
@@ -20,6 +21,7 @@
                           @foreach($guardies as $guardy)
                         <tr>
                         <td><a href="{{ route("guardies.show", $guardy->id) }}">{{ $guardy->name }}</a></td>
+                        <td><a class="btn btn-primary" href="{{ route("guardies.calendar", $guardy->id) }}">Voir calendrier</a></td>
                           
                         </tr>
                         @endforeach
