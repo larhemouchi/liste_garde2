@@ -25,7 +25,8 @@ class SpecController extends Controller
      */
     public function create()
     {
-        //
+        $rolies = Roly::all();
+        return view('specs.add', compact('rolies'));
     }
 
     /**
@@ -36,7 +37,10 @@ class SpecController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $spec = Spec::create($request->all());
+
+        return $spec;
     }
 
     /**
@@ -58,7 +62,8 @@ class SpecController extends Controller
      */
     public function edit(Spec $spec)
     {
-        //
+        $rolies = Roly::all();
+        return view('specs.edit', compact('spec', 'rolies'));
     }
 
     /**
@@ -70,7 +75,11 @@ class SpecController extends Controller
      */
     public function update(Request $request, Spec $spec)
     {
-        //
+
+          
+        $spec->update($request->all());
+
+        return $spec;
     }
 
     /**

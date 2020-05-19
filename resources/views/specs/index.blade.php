@@ -13,6 +13,7 @@
                       <thead>
                         <tr>
                           <th>Name</th>
+                          <th>Modifier</th>
 
                         </tr>
                       </thead>
@@ -20,6 +21,7 @@
                           @foreach($specs as $spec)
                         <tr>
                         <td><a href="{{ route("spec.show", $spec->id) }}">{{ $spec->name }}</a></td>
+                        <td><a class="btn btn-primary" href="{{ route("spec.edit", $spec->id) }}">Editer</a></td>
                           
                         </tr>
                         @endforeach
