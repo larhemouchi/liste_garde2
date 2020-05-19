@@ -25,7 +25,7 @@ class RolyController extends Controller
      */
     public function create()
     {
-        //
+        return view('rolies.add');
     }
 
     /**
@@ -36,7 +36,10 @@ class RolyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          
+        $roly= Roly::create($request->all());
+
+        return $roly;
     }
 
     /**
@@ -56,9 +59,10 @@ class RolyController extends Controller
      * @param  \App\Roly  $roly
      * @return \Illuminate\Http\Response
      */
-    public function edit(Roly $roly)
+    public function edit(Roly $role)
     {
-        //
+        $roly = $role;
+        return view('rolies.edit', compact('roly'));
     }
 
     /**
@@ -68,9 +72,13 @@ class RolyController extends Controller
      * @param  \App\Roly  $roly
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Roly $roly)
+    public function update(Request $request, Roly $role)
     {
-        //
+        $roly = $role;
+          
+        $roly->update($request->all());
+
+        return $roly;
     }
 
     /**

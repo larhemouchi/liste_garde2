@@ -20,7 +20,8 @@
                           @foreach($rolies as $roly)
                         <tr>
                         <td><a href="{{ route("roles.show", $roly->id) }}">{{ $roly->name }}</a></td>
-                          
+                        <td><a class="btn btn-primary" href="{{ route("roles.edit", $roly->id) }}">Modifier</a></td>
+
                         </tr>
                         @endforeach
                         

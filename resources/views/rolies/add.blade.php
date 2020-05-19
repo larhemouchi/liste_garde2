@@ -5,15 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">Create Roly</div>
 
                 <div class="card-body">
-                  {!! Form::model($user, ['route' => ['users.update', $user->id]]) !!}
-                   
+                  {!! Form::open(['method' => 'POST','route' => ['roles.store']]) !!}
+
                         
 
 
-                        <x-userfields :pass="$pass" :user="$user"></x-userfields>
+                        <x-rolyfields></x-rolyfields>
 
 
                   {!! Form::close()!!}
