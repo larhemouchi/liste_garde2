@@ -198,6 +198,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>voire</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('servicies.create') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>creer</p>
+                  </a>
+                </li>
+
             </ul>
           </li>
           <li class="nav-item has-treeview menu-close">

@@ -25,7 +25,7 @@ class ServicyController extends Controller
      */
     public function create()
     {
-        //
+        return view('servicies.add');
     }
 
     /**
@@ -36,7 +36,9 @@ class ServicyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $servicy = Servicy::create($request->all());
+
+        return $servicy;
     }
 
     /**
@@ -58,7 +60,7 @@ class ServicyController extends Controller
      */
     public function edit(Servicy $servicy)
     {
-        //
+        return view('servicies.edit', compact('servicy'));
     }
 
     /**
@@ -70,7 +72,9 @@ class ServicyController extends Controller
      */
     public function update(Request $request, Servicy $servicy)
     {
-        //
+        $servicy->update($request->all());
+
+        return $servicy;
     }
 
     /**
