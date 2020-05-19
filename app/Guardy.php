@@ -10,13 +10,15 @@ class Guardy extends Model implements \Acaronlex\LaravelCalendar\Event
 {
 
     use RevisionableTrait;
+
+    protected $revisionCreationsEnabled = true;
     
     protected $fillable = [
         'name', 'servuser_id', 'plage_id', 'date_start', 'date_end'
     ];
 
-# EVENT 
-protected $dates = ['start', 'end'];
+    # EVENT 
+    protected $dates = ['date_start', 'date_end'];
 
 /**
  * Get the event's id number

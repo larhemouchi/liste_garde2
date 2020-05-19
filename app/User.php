@@ -16,6 +16,9 @@ class User extends Authenticatable
     use HasRolesAndAbilities;
     use RevisionableTrait;
 
+
+    protected $revisionCreationsEnabled = true;
+
     /**
      * The attributes that are mass assignable.
      *

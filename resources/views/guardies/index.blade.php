@@ -14,6 +14,7 @@
                         <tr>
                           <th>Names</th>
                           <th>Calendrier</th>
+                          <th>Editer</th>
 
                         </tr>
                       </thead>
@@ -22,6 +23,7 @@
                         <tr>
                         <td><a href="{{ route("guardies.show", $guardy->id) }}">{{ $guardy->name }}</a></td>
                         <td><a class="btn btn-primary" href="{{ route("guardies.calendar", $guardy->id) }}">Voir calendrier</a></td>
+                        <td><a class="btn btn-primary" href="{{ route("guardies.edit", $guardy->id) }}">Editer</a></td>
                           
                         </tr>
                         @endforeach

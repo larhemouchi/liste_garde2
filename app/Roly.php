@@ -9,6 +9,9 @@ use \Venturecraft\Revisionable\RevisionableTrait;
 class Roly extends Model
 {
     use RevisionableTrait;
+
+
+    protected $revisionCreationsEnabled = true;
     //
     protected $fillable = [
         'name',

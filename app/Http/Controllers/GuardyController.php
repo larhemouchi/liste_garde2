@@ -217,7 +217,11 @@ class GuardyController extends Controller
      */
     public function edit(Guardy $guardy)
     {
-        //
+        $plages = Plage::all();
+
+        $servusers = Servuser::all();
+
+        return view('guardies.edit', compact('guardy', 'plages', 'servusers'));
     }
 
     /**

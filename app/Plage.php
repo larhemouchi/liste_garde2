@@ -9,9 +9,13 @@ class Plage extends Model
 {
     use RevisionableTrait;
 
+    protected $revisionCreationsEnabled = true;
+
     protected $fillable = [
         'name', 'time_start' , 'time_end'
     ];
+
+    protected $dates = ['time_start', 'time_end'];
 
     public function guardies()
     {

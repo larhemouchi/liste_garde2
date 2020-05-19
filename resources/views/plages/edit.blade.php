@@ -17,11 +17,11 @@
                 <!-- /.card-header -->
                 <!-- form start -->
                 
-                {!! Form::open(['route' => 'plages.store', 'class' => 'form-horizontal' ]) !!}
+                {!! Form::model($plage, ['route' => ['plages.update', $plage->id],'method' => 'PUT' , 'class' => 'form-horizontal' ]) !!}
+                    {!! Form::token() !!}
 
-                    
+                    <x-plagefields :plage="$plage"></x-plagefields>
 
-                  <x-plagefields></x-plagefields>
 
 
 
@@ -56,7 +56,8 @@
           datepicker:false,
           format:'H:i',
           theme:'dark',
-          step:30
+          step:30,
+          //defaultdate:'{{ $plage->time_start }}'
         });
 
         jQuery('#time_end').datetimepicker({

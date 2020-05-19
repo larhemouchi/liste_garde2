@@ -9,6 +9,8 @@ use \Venturecraft\Revisionable\RevisionableTrait;
 class Servuser extends Model
 {
     use RevisionableTrait;
+
+    protected $revisionCreationsEnabled = true;
     
     protected $table = 'servicy_user';
 

@@ -9,6 +9,9 @@ use \Venturecraft\Revisionable\RevisionableTrait;
 class Servicy extends Model
 {
     use RevisionableTrait;
+
+
+    protected $revisionCreationsEnabled = true;
     
     protected $fillable = [
         'name',

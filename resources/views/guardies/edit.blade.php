@@ -12,18 +12,15 @@
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <div class="card-header">
-                  <h3 class="card-title">Horizontal Form</h3>
+                  <h3 class="card-title">Créé une guard</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 
-                {!! Form::open(['route' => 'plages.store', 'class' => 'form-horizontal' ]) !!}
+                {!! Form::model($guardy,['route' => 'guardies.store', 'method' => 'POST' ,'class' => 'form-horizontal' ]) !!}
+                    {!! Form::token() !!}
 
-                    
-
-                  <x-plagefields></x-plagefields>
-
-
+                    <x-guardyfields :plages="$plages" :servusers="$servusers" :guardy="$guardy"></x-guardyfields>
 
                   <!-- /.card-body -->
                   <div class="card-footer">
@@ -45,26 +42,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
     <script>
       jQuery(document).ready(function() {
-        
+
+        jQuery('.invisible').removeClass("invisible");
+         
         jQuery.datetimepicker.setLocale('fr');
 
 
-        jQuery('.invisible').removeClass("invisible");
+        
 
-        jQuery('#time_start').datetimepicker({
+       jQuery('#date_start').datetimepicker({
           lang:'fr',
-          datepicker:false,
-          format:'H:i',
-          theme:'dark',
-          step:30
+          timepicker:false,
+          format:'d-m-yy',
+          theme:'dark'
         });
 
-        jQuery('#time_end').datetimepicker({
+        jQuery('#date_end').datetimepicker({
           lang:'fr',
-          datepicker:false,
-          format:'H:i',
-          theme:'dark',
-          step:30
+          timepicker:false,
+          format:'d-m-yy',
+          theme:'dark'
         });
 
          

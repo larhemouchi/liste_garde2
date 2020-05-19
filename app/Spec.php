@@ -9,6 +9,8 @@ use \Venturecraft\Revisionable\RevisionableTrait;
 class Spec extends Model
 {
     use RevisionableTrait;
+
+    protected $revisionCreationsEnabled = true;
     
     protected $fillable = [
         'name', 'roly_id'

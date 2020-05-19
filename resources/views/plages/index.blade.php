@@ -13,6 +13,7 @@
                       <thead>
                         <tr>
                           <th>Names</th>
+                          <th>Editer</th>
 
                         </tr>
                       </thead>
@@ -20,7 +21,7 @@
                           @foreach($plages as $plage)
                         <tr>
                           <td><a href="{{ route("plages.show", $plage->id) }}">{{ $plage->name }}</a></td>
-                          
+                          <td><a class="btn btn-primary" href="{{ route("plages.edit", $plage->id) }}">Modifier</a></td>
                         </tr>
                         @endforeach
                         

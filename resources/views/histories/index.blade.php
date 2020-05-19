@@ -19,7 +19,7 @@
                       <tbody>
                           @foreach($histories as $history)
                         <tr>
-                          <td>{{ $history->userResponsible()->first_name }} changed {{ $history->fieldName() }} from {{ $history->oldValue() }} to {{ $history->newValue() }}</td>
+                          <td>{{ optional($history->userResponsible())->name }} changed {{ $history->fieldName() }} from {{ $history->oldValue() }} to {{ $history->newValue() }}</td>
                         </tr>
                         @endforeach
                         

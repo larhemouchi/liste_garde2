@@ -103,7 +103,7 @@ class PlageController extends Controller
      */
     public function edit(Plage $plage)
     {
-        //
+        return view('plages.edit', compact('plage'));
     }
 
     /**
@@ -115,7 +115,10 @@ class PlageController extends Controller
      */
     public function update(Request $request, Plage $plage)
     {
-        //
+          
+        $plage->update($request->all());
+
+        return $plage;
     }
 
     /**
