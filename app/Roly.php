@@ -12,6 +12,9 @@ class Roly extends Model
 
 
     protected $revisionCreationsEnabled = true;
+
+    protected $revisionNullString = 'Rien';
+    protected $revisionUnknownString = 'unconnu';
     //
     protected $fillable = [
         'name',

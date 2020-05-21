@@ -17,7 +17,7 @@
                 <!-- /.card-header -->
                 <!-- form start -->
                 
-                {!! Form::model($guardy,['route' => 'guardies.store', 'method' => 'POST' ,'class' => 'form-horizontal' ]) !!}
+                {!! Form::model($guardy,['route' => ['guardies.update', $guardy->id], 'method' => 'PUT' ,'class' => 'form-horizontal' ]) !!}
                     {!! Form::token() !!}
 
                     <x-guardyfields :plages="$plages" :servusers="$servusers" :guardy="$guardy"></x-guardyfields>

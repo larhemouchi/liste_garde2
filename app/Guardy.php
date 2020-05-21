@@ -11,6 +11,9 @@ class Guardy extends Model implements \Acaronlex\LaravelCalendar\Event
 
     use RevisionableTrait;
 
+    protected $revisionNullString = 'Rien';
+    protected $revisionUnknownString = 'unconnu';
+
     protected $revisionCreationsEnabled = true;
     
     protected $fillable = [

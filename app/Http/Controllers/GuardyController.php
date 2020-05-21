@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\{Guardy, Plage, Servuser};
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
+use Auth;
 use Validator;
 
 class GuardyController extends Controller
@@ -104,7 +105,17 @@ class GuardyController extends Controller
 
         //return response()->json($calendar);
 
-        return view('guardies.general-calendar', compact('calendar'));
+        if(Auth::check()){
+
+            return view('guardies.general-calendar', compact('calendar'));
+
+        }else{
+
+            return view('guardies.g-calendar-guest', compact('calendar'));
+
+        }
+
+        
 
 
     }
@@ -233,7 +244,37 @@ class GuardyController extends Controller
      */
     public function update(Request $request, Guardy $guardy)
     {
-        //
+        $validation = Validator::make($request->all(), [
+
+        ]);
+
+
+        $date_start = Carbon::parse($request->date_start);
+        $date_end = Carbon::parse($request->date_end);
+
+        $guardy_request = $request->toArray();
+
+        $guardy_request['date_start'] = $date_start->toDateString();
+        $guardy_request['date_end'] = $date_end->toDateString('Y-m-d');
+
+
+        if( $date_start < $date_end ){
+
+            $guardy->update($guardy_request);
+
+
+            return $guardy;
+
+        }else{
+
+            return back()
+            ->withInput()
+            ->withErrors([]) ;
+            //['name.required', 'Name is required']
+
+        }
+        //$plage = Plage::create(['name' => $request->name]);
+        return 'NOT STORED';
     }
 
     /**
@@ -245,5 +286,17 @@ class GuardyController extends Controller
     public function destroy(Guardy $guardy)
     {
         //
+    }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Guardy  $guardy
+     * @return \Illuminate\Http\Response
+     */
+    public function history(Guardy $guardy)
+    {
+        return view('guardies.history', compact('guardy'));
     }
 }

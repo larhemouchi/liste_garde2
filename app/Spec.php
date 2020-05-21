@@ -11,6 +11,9 @@ class Spec extends Model
     use RevisionableTrait;
 
     protected $revisionCreationsEnabled = true;
+
+    protected $revisionNullString = 'Rien';
+    protected $revisionUnknownString = 'unconnu';
     
     protected $fillable = [
         'name', 'roly_id'

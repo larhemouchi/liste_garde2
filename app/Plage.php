@@ -11,6 +11,9 @@ class Plage extends Model
 
     protected $revisionCreationsEnabled = true;
 
+    protected $revisionNullString = 'Rien';
+    protected $revisionUnknownString = 'unconnu';
+
     protected $fillable = [
         'name', 'time_start' , 'time_end'
     ];

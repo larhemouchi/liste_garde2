@@ -1,5 +1,4 @@
-@extends('layouts.dash')
-
+@extends('layouts.app')
 
 @section('css')
 

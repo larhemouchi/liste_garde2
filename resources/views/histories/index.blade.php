@@ -17,11 +17,28 @@
                         </tr>
                       </thead>
                       <tbody>
-                          @foreach($histories as $history)
+
+                        
+                          
+
+                        
+
+                        @foreach($histories as $history)
                         <tr>
-                          <td>{{ optional($history->userResponsible())->name }} changed {{ $history->fieldName() }} from {{ $history->oldValue() }} to {{ $history->newValue() }}</td>
+                          @if($history->key == 'created_at' && !$history->old_value)
+                          <td>{{ optional($history->userResponsible())->email }} à creé a {{ $history->newValue() }}</td>
+
+                          @else
+                          <td>{{ optional($history->userResponsible())->email }} à changé {{ $history->fieldName() }} depuis {{ $history->oldValue() }} à {{ $history->newValue() }}</td>
+
+                          @endif
                         </tr>
                         @endforeach
+
+
+                      
+
+
                         
                       </tbody>
                     </table>

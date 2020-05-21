@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @yield('css')
 </head>
 <body>
     <div id="app">
@@ -71,5 +73,15 @@
             @yield('content')
         </main>
     </div>
+    <script src='{{ asset("lte3/plugins/jquery/jquery.min.js") }}'></script>
+    <!-- Bootstrap 4 -->
+    <script src='{{ asset("lte3/plugins/bootstrap/js/bootstrap.bundle.min.js") }}'></script>
+    
+    
+    
+    <!-- jQuery UI -->
+    <script src='{{ asset("lte3/plugins/jquery-ui/jquery-ui.min.js") }}'></script>
+    
+    @yield('js')
 </body>
 </html>

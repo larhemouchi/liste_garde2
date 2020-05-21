@@ -11,6 +11,9 @@ class Servuser extends Model
     use RevisionableTrait;
 
     protected $revisionCreationsEnabled = true;
+
+    protected $revisionNullString = 'Rien';
+    protected $revisionUnknownString = 'unconnu';
     
     protected $table = 'servicy_user';
 

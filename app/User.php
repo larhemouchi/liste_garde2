@@ -19,6 +19,10 @@ class User extends Authenticatable
 
     protected $revisionCreationsEnabled = true;
 
+
+    protected $revisionNullString = 'Rien';
+    protected $revisionUnknownString = 'unconnu';
+
     /**
      * The attributes that are mass assignable.
      *
