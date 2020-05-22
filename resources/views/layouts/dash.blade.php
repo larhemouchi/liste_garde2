@@ -280,6 +280,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
 
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Comments
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('comment.index') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Touts les commentaire</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="{{ route('comment.create') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Ajouter</p>
+                    </a>
+                  </li>
+
+
+            </ul>
+          </li>
+
           <li class="nav-item">
           <a href="{{ route('log-viewer::dashboard') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
@@ -298,6 +325,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

@@ -47,6 +47,8 @@ Route::get('/plages-h/{plage}', 'PlageController@history')->name('plages.history
 Route::resource('plages', 'PlageController');
 
 
+Route::resource('comment', 'CommentController');
+
 Route::get('/calendar', 'GuardyController@generalCalendar')->name('guardies.g-calendar');
 Route::get('/calendar/{guardy}', 'GuardyController@calendar')->name('guardies.calendar');
 

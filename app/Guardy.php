@@ -88,4 +88,10 @@ public function getEnd()
     {
         return $this->belongsTo('App\Plage');
     }
+
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }
