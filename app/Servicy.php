@@ -17,7 +17,7 @@ class Servicy extends Model
     protected $revisionUnknownString = 'unconnu';
     
     protected $fillable = [
-        'name',
+        'name', 'order'
     ];
     
     public function users()
