@@ -19,6 +19,8 @@
         <label for="inputEmail3" class="col-sm-2 col-form-label">User by service</label>
         <div class="col-sm-10">
 
+          {{-- $servusers --}}
+
             <select name="servuser_id" class="form-control" id="exampleFormControlSelect1">
                 @foreach($servusers as $servuser)
             <option 

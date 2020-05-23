@@ -37,6 +37,7 @@ Route::resource('users', 'UserController');
 Route::resource('spec', 'SpecController');
 Route::resource('servicies', 'ServicyController');
 
+Route::get('/guardy-c/{guardy}', 'GuardyController@comments')->name('guardies.comments');
 Route::get('/guardies-h/{plage}', 'GuardyController@history')->name('guardies.history');
 Route::resource('guardies', 'GuardyController');
 

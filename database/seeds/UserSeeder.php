@@ -19,6 +19,11 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make(123456789), // password
             'remember_token' => Str::random(10),
+            'last_name' => 'test',
+            'login' => 'test',
+            'num_detect' => 123,
+            'tel'=>'(+212)666666666' ,
+            'fix'=>'(+212)666666666'
         ]);
 
 

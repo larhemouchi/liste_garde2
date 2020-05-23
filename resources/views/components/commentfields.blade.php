@@ -3,7 +3,7 @@
     <div class="form-group row">
       <label for="inputEmail3" class="col-sm-2 col-form-label">Les utilisateurs</label>
       <div class="col-sm-10">
-        {!!Form::select('roly_id', $users->pluck('name', 'id') , null, ['class' => 'form-control']) !!}
+        {!!Form::select('user_id', $users->pluck('name', 'id') , null, ['class' => 'form-control']) !!}
 
       </div>
     </div>
@@ -11,7 +11,7 @@
     <div class="form-group row">
         <label for="inputEmail3" class="col-sm-2 col-form-label">Les guardes</label>
         <div class="col-sm-10">
-          {!!Form::select('roly_id', $guardies->pluck('name', 'id') , null, ['class' => 'form-control']) !!}
+          {!!Form::select('guardy_id', $guardies->pluck('name', 'id') , null, ['class' => 'form-control']) !!}
   
         </div>
       </div>

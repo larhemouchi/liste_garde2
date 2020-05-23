@@ -13,7 +13,7 @@ class ServicySeeder extends Seeder
     {
 
 
-        factory(App\Servicy::class, 30)->create();
+        factory(App\Servicy::class, 3)->create();
 
 
         $servicies = App\Servicy::all();

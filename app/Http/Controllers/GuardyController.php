@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\{Guardy, Plage, Servuser};
+use App\{Guardy, Plage, Servuser, Comment};
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use Auth;
@@ -298,5 +298,11 @@ class GuardyController extends Controller
     public function history(Guardy $guardy)
     {
         return view('guardies.history', compact('guardy'));
+    }
+
+
+    public function comments(Guardy $guardy)
+    {
+        return view('guardies.comments', compact('guardy'));
     }
 }
