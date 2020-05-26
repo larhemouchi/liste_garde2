@@ -28,6 +28,7 @@ class CreateGuardiesTable extends Migration
             $table->date('date_end');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

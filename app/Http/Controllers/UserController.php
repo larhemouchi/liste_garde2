@@ -86,6 +86,18 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+
+        $user->specs()->detach();
+
+        $user->servicies()->detach();
+
+        $user->delete();
+
+
+
+        //droping pivote table
+        //servicy_user
+        //specuser
     }
 }

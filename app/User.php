@@ -10,11 +10,15 @@ use \Venturecraft\Revisionable\RevisionableTrait;
 
 use Silber\Bouncer\Database\HasRolesAndAbilities;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class User extends Authenticatable
 {
     use Notifiable;
     use HasRolesAndAbilities;
     use RevisionableTrait;
+
+    use SoftDeletes;
 
 
     protected $revisionCreationsEnabled = true;

@@ -20,7 +20,7 @@
                       <tbody>
                           @foreach($comments as $comment)
                         <tr>
-                        <td><a href="{{ route("comment.show", $comment->id) }}">{{ $comment->comment }}</a></td>
+                        <td><a href="{{ route("comment.show", $comment->id) }}">{{ $comment->comment }} by {{ optional($comment->user())->email || 'UKNOWN' }}</a></td>
                         <td><a class="btn btn-primary" href="{{ route("comment.edit", $comment->id) }}">Modifier</a></td>
                         </tr>
                         @endforeach

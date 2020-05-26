@@ -20,6 +20,7 @@ class CreateSpecUserTable extends Migration
             $table->unsignedBigInteger('spec_id')->index();
             $table->foreign('spec_id')->references('id')->on('specs')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

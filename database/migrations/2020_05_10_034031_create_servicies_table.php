@@ -18,6 +18,7 @@ class CreateServiciesTable extends Migration
             $table->string('name')->unique();
             $table->float('order')->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -30,3 +30,7 @@ General calendar should not be in the dashboard layout
 
 protected $revisionNullString = 'nothing';
 protected $revisionUnknownString = 'unknown';
+
+
+
+spec_user table have soft delete

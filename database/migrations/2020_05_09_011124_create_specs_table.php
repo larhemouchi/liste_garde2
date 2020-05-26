@@ -19,6 +19,7 @@ class CreateSpecsTable extends Migration
             $table->unsignedBigInteger('roly_id')->index();
             $table->foreign('roly_id')->references('id')->on('rolies')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

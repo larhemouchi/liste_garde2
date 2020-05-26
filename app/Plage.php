@@ -5,9 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use \Venturecraft\Revisionable\RevisionableTrait;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Plage extends Model
 {
     use RevisionableTrait;
+
+    use SoftDeletes;
 
     protected $revisionCreationsEnabled = true;
 

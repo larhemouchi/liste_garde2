@@ -20,6 +20,7 @@ class CreateServicyUserTable extends Migration
             $table->unsignedBigInteger('servicy_id')->index();
             $table->foreign('servicy_id')->references('id')->on('servicies')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

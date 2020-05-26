@@ -90,6 +90,11 @@ class SpecController extends Controller
      */
     public function destroy(Spec $spec)
     {
-        //
+
+        $spec->users()->detach();
+
+        //$spec->servicies()->detach();
+
+        $spec->delete();
     }
 }

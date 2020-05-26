@@ -6,10 +6,14 @@ use \Venturecraft\Revisionable\RevisionableTrait;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Guardy extends Model implements \Acaronlex\LaravelCalendar\Event
 {
 
     use RevisionableTrait;
+
+    use SoftDeletes;
 
     protected $revisionNullString = 'Rien';
     protected $revisionUnknownString = 'unconnu';

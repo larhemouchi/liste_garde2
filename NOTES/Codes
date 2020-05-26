@@ -1,5 +1,6 @@
 composer dumpautoload && php artisan db:wipe && php artisan migrate --seed
 
+
 git add . && git commit -m "change" && git push origin master
 
 

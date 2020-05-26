@@ -32,7 +32,9 @@ Route::resource('roles', 'RolyController');
 
 
 Route::get('/users/{id}', 'UserController@edit')->name('user.edit');
-Route::post('/users/{id}', 'UserController@update')->name('user.update');
+Route::put('/users/{id}', 'UserController@update')->name('user.update');
+Route::delete('/users-destroy/{id}', 'UserController@destroy')->name('user.destroy');
+
 Route::resource('users', 'UserController');
 Route::resource('spec', 'SpecController');
 Route::resource('servicies', 'ServicyController');
