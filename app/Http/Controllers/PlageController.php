@@ -129,6 +129,8 @@ class PlageController extends Controller
      */
     public function destroy(Plage $plage)
     {
-        //
+        $plage->delete();
+
+        return true;
     }
 }

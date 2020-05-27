@@ -95,9 +95,14 @@ class UserController extends Controller
         $user->delete();
 
 
+        return true;
+
+
 
         //droping pivote table
         //servicy_user
         //specuser
+
+
     }
 }

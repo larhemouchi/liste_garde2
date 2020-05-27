@@ -89,6 +89,8 @@ class RolyController extends Controller
      */
     public function destroy(Roly $roly)
     {
-        //
+        $roly->delete();
+
+        return true;
     }
 }

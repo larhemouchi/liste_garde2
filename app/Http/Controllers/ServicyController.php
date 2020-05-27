@@ -85,6 +85,8 @@ class ServicyController extends Controller
      */
     public function destroy(Servicy $servicy)
     {
-        //
+        $servicy->delete();
+
+        return true;
     }
 }

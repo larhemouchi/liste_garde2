@@ -15,7 +15,7 @@
                           <th>Name</th>
                           <th>Modifier</th>
                           <th>Suprimer</th>
-
+                          
                         </tr>
                       </thead>
                       <tbody>

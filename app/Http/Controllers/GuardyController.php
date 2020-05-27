@@ -285,7 +285,9 @@ class GuardyController extends Controller
      */
     public function destroy(Guardy $guardy)
     {
-        //
+        $guardy->delete();
+
+        return true;
     }
 
 

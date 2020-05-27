@@ -96,5 +96,7 @@ class SpecController extends Controller
         //$spec->servicies()->detach();
 
         $spec->delete();
+
+        return true;
     }
 }
