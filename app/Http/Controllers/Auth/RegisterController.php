@@ -64,10 +64,35 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+
+            'last_name' => $data['last_name'],
+            'login' => $data['login'],
+            'num_detect' => $data['num_detect'],
+            'tel' => $data['tel'],
+            'fix' => $data['fix'],
         ]);
+
+        if($data['position'] == 0 ){
+
+            $user->assign('superAdmin');
+
+        }elseif($data['position'] == 1 ){
+
+            $user->assign('admin');
+
+        }else{
+
+            $user->assign('user');
+
+        }
+
+
+        return $user;
+
+        
     }
 }

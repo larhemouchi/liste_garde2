@@ -1,0 +1,16 @@
+if($data['position' == 0 ]){
+
+            $user->assign('superAdmin');
+
+        }elseif($data['position' == 1 ]){
+
+            $user->assign('admin');
+
+        }else{
+
+            $user->assign('user');
+
+        }
+
+
+
