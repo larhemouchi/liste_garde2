@@ -40,7 +40,7 @@ class SpecController extends Controller
 
         $spec = Spec::create($request->all());
 
-        return $spec;
+        return view('specs.show', compact('spec'));
     }
 
     /**
@@ -79,7 +79,7 @@ class SpecController extends Controller
           
         $spec->update($request->all());
 
-        return $spec;
+        return view('specs.show', compact('spec'));
     }
 
     /**

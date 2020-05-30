@@ -69,7 +69,7 @@ class PlageController extends Controller
         if( $time_start < $time_end ){
 
             $plage = Plage::create($request->toArray());
-            return $plage;
+            return view('plages.show', compact('plage'));
 
         }else{
 
@@ -118,7 +118,7 @@ class PlageController extends Controller
           
         $plage->update($request->all());
 
-        return $plage;
+        return view('plages.show', compact('plage'));
     }
 
     /**

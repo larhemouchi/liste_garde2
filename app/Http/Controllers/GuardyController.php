@@ -195,7 +195,7 @@ class GuardyController extends Controller
             $guardy = Guardy::create($guardy_request);
 
 
-            return $guardy;
+            return view('guardies.show', compact('guardy'));
 
         }else{
 
@@ -263,7 +263,7 @@ class GuardyController extends Controller
             $guardy->update($guardy_request);
 
 
-            return $guardy;
+            return view('guardies.show', compact('guardy'));
 
         }else{
 

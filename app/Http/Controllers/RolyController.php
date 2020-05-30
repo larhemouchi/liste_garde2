@@ -39,7 +39,7 @@ class RolyController extends Controller
           
         $roly= Roly::create($request->all());
 
-        return $roly;
+        return view('rolies.show', compact('roly'));
     }
 
     /**
@@ -78,7 +78,7 @@ class RolyController extends Controller
           
         $roly->update($request->all());
 
-        return $roly;
+        return view('rolies.show', compact('roly'));
     }
 
     /**

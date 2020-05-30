@@ -38,7 +38,7 @@ class ServicyController extends Controller
     {
         $servicy = Servicy::create($request->all());
 
-        return $servicy;
+        return view('servicies.show', compact('servicy'));
     }
 
     /**
@@ -74,7 +74,7 @@ class ServicyController extends Controller
     {
         $servicy->update($request->all());
 
-        return $servicy;
+        return view('servicies.show', compact('servicy'));
     }
 
     /**
