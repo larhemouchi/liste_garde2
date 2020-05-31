@@ -19,7 +19,8 @@
         "laravel/ui": "^2.0",
         "laravelcollective/html": "^6.1",
         "silber/bouncer": "v1.0.0-rc.8",
-        "venturecraft/revisionable": "^1.34"
+        "venturecraft/revisionable": "^1.34",
+        "yajra/laravel-datatables-oracle": "^9.10"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",

@@ -9,6 +9,8 @@
                 <div class="card-header">Guardies</div>
 
                 <div class="card-body table-responsive p-0">
+                  <a class="btn btn-primary" href="{{ route("guardies.index-extended") }}">Extended</a>
+
                     <table class="table table-hover text-nowrap">
                       <thead>
                         <tr>
@@ -29,7 +31,7 @@
                         <td><a class="btn btn-primary" href="{{ route("guardies.edit", $guardy->id) }}">Editer</a></td>
                         <td>
 
-                          <a href="#" class="destroy" data-href="{{ route('servicies.destroy', $servicy->id) }}">
+                          <a href="#" class="destroy" data-href="{{ route('guardies.destroy', $guardy->id) }}">
                               <i class="mr-2"></i> Suprimer
                             </a>
                   

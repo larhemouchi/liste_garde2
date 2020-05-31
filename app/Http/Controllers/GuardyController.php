@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Auth;
 use Validator;
 
+
+
 class GuardyController extends Controller
 {
 
@@ -307,4 +309,31 @@ class GuardyController extends Controller
     {
         return view('guardies.comments', compact('guardy'));
     }
+
+
+    public function indexExtended()
+    {
+        return view('guardies.index-extended');
+    }
+
+    public function indexExtendedData()
+    {
+
+        //return Guardy::all()->count();
+
+        if(Guardy::all()->count()){
+
+            return datatables(Guardy::all())->toJson();
+
+        }
+        else{
+            return response()->json(Guardy::all());
+        }
+        
+    }
+
+    
+
+
+
 }

@@ -25,7 +25,7 @@
                         <td><a class="btn btn-primary" href="{{ route("comment.edit", $comment->id) }}">Modifier</a></td>
                         <td>
 
-                          <a href="#" class="destroy" data-href="{{ route('roles.destroy', $roly->id) }}">
+                          <a href="#" class="destroy" data-href="{{ route('comment.destroy', $comment->id) }}">
                               <i class="mr-2"></i> Suprimer
                             </a>
                   

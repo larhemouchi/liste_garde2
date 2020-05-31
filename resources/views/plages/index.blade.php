@@ -26,7 +26,7 @@
                           <td><a class="btn btn-primary" href="{{ route("plages.edit", $plage->id) }}">Modifier</a></td>
                           <td>
 
-                            <a href="#" class="destroy" data-href="{{ route('spec.destroy', $spec->id) }}">
+                            <a href="#" class="destroy" data-href="{{ route('plages.destroy', $plage->id) }}">
                                 <i class="mr-2"></i> Suprimer
                               </a>
                     
